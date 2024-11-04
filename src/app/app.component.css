@@ -1,0 +1,30 @@
+.header {
+  background-color: #ffffff;
+  padding: 0px;
+}
+
+.site-name {
+  font-size: 28px;
+  font-weight:bolder;
+  margin-left: 10px;
+  font-family:cursive;
+  color:black;
+}
+
+.navbar-nav .nav-link {
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+a{
+  cursor: pointer;
+}
+
+.active{
+  background-color:rgb(114, 115, 121);
+}
+
+.logo {
+  width: 100px; 
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <h4>The name of the place is {{ travel?.name}}.The Booking ID for this place is " {{ travel?.placeID }} ". The place is located in {{ travel?.location }}.
+        The total rating for {{ travel?.name}} is {{ travel?.rating }}. </h4>
+    <h4>To enjoy your journey just pay RS.{{ travel?.price }}</h4>
+    <br>
+
+   <button class="btn btn-outline-info"  
+    style="width: 80px;margin-left: 10px;" (click)="onEdit()">
+        Edit
+    </button>
+    <button class="btn btn-outline-danger" (click)="onDelete()" style="width: 85px;margin-left: 10px">
+        Delete
+    </button>
+   
+    <br><br>
+
+    <button class="btn btn-info" (click)="onBack()"> Go Back</button>
+</div>

@@ -1,0 +1,82 @@
+<div class="card">
+    <div class="card-header heading" style="background-color: powderblue;">
+        Register - Template Form
+    </div>
+    <div class="card-body">
+        <form novalidate (ngSubmit)="save(regForm)" #regForm="ngForm">
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="firstNameId">First Name</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="firstNameId" required minlength="4" 
+                           name="firstName" [(ngModel)]="user.firstName" #firstNameVar="ngModel"
+                           [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid}"/>
+                    <span class="invalid-feedback">
+                        <span *ngIf="firstNameVar.errors?.['required']">Please enter your first name.</span>
+                        <span *ngIf="firstNameVar.errors?.['minlength']">The first name needs to be at least 4 characters.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="lastNameId" required minlength="4"
+                           name="lastName" [(ngModel)]="user.lastName" #lastNameVar="ngModel"
+                           [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid}"/>
+                    <span class="invalid-feedback">
+                        <span *ngIf="lastNameVar.errors?.['required']">Please enter your last name.</span>
+                        <span *ngIf="lastNameVar.errors?.['minlength']">The last name needs to be at least 4 characters.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="emailId">Email</label>
+                <div class="col-md-8">
+                    <input type="email" class="form-control" id="emailId" required
+                           name="email" [(ngModel)]="user.email" #emailVar="ngModel"
+                           [ngClass]="{'is-invalid': (emailVar.touched || emailVar.dirty) && !emailVar.valid}"/>
+                    <span class="invalid-feedback">
+                        <span *ngIf="emailVar.errors?.['required']">Please enter your email.</span>
+                        <span *ngIf="emailVar.errors?.['email']">Enter a valid email address.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="phoneId">Phone Number</label>
+                <div class="col-md-8">
+                    <input type="tel" class="form-control" id="phoneId" required pattern="^[0-9]{10}$"
+                           name="phone" [(ngModel)]="user.phone" #phoneVar="ngModel"
+                           [ngClass]="{'is-invalid': (phoneVar.touched || phoneVar.dirty) && !phoneVar.valid}"/>
+                    <span class="invalid-feedback">
+                        <span *ngIf="phoneVar.errors?.['required']">Please enter your phone number.</span>
+                        <span *ngIf="phoneVar.errors?.['pattern']">Enter a valid 10-digit phone number.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="subjectId">Subject</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="subjectId" required
+                           name="subject" [(ngModel)]="user.subject" #subjectVar="ngModel"
+                           [ngClass]="{'is-invalid': (subjectVar.touched || subjectVar.dirty) && !subjectVar.valid}"/>
+                    <span class="invalid-feedback">
+                        <span *ngIf="subjectVar.errors?.['required']">Please enter a subject.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-2 col-md-4">
+                    <button type="submit" class="btn btn-primary"
+                            [title]="regForm.valid ? 'Save Data' : 'Disable till Valid'"
+                            [disabled]="!regForm.valid">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

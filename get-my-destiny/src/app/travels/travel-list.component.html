@@ -1,0 +1,64 @@
+      <section class="add-new-travel mb-5">
+        <h3>Add New Travel Destination</h3>
+        <form (ngSubmit)="onAddTravel()">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="newTravel.name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" [(ngModel)]="newTravel.location" name="location" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" [(ngModel)]="newTravel.price" name="price" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="rating" class="form-label">Rating</label>
+                    <input type="number" class="form-control" id="rating" [(ngModel)]="newTravel.rating" name="rating" min="0" max="5" step="0.1" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="img" class="form-label">Image Path</label>
+                    <input type="text" class="form-control" id="img" [(ngModel)]="newTravel.img" name="img" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" [(ngModel)]="newTravel.description" name="description" rows="3" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Travel</button>
+        </form>
+    </section>
+    
+    
+    <section class="popular-tours py-5">
+        <div class="container">
+            <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterDestinations()" />
+            </div>
+            <div class="row">
+                <div class="col-md-4" *ngFor="let travel of filteredDestinations">
+                    <div class="card tour-card shadow-sm border-0 mb-4">
+                        <img [src]="travel.img" alt="{{ travel.name }}" class="card-img-top tour-img">
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-primary">{{ travel.name }}</h5>
+                            <p class="card-text text-muted mb-2">
+                                <i class="bi bi-geo-alt-fill me-1"></i> {{ travel.location }} <br>
+                                <app-city-rating [rating]="travel.rating" (ratingClicked)="onRatingClicked($event)"></app-city-rating>
+                                <span class="fw-bold text-success">Price: {{ travel.price | currency:'INR' }}</span>
+                            </p>
+                            <p class="card-text">{{ travel.description }}</p>
+                            <button class="btn btn-outline-primary w-100" [routerLink]="['/travel-details', travel.placeID]">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+     
+      

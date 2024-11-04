@@ -1,0 +1,90 @@
+<div class="card">
+    <div class="card-header heading" style="background-color: powderblue">
+      Register - Reactive Form
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSave()">
+  
+      
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="firstNameId">First Name</label>
+          <div class="col-md-8">
+            <input
+              type="text" 
+              class="form-control" 
+              id="name" 
+              formControlName="name"
+              [ngClass]="{'is-invalid': (name.touched || name.dirty) && !name.valid}" />
+            <span class="invalid-feedback">
+              <span *ngIf="name.errors?.['required']">Please enter your first name.</span>
+              <span *ngIf="name.errors?.['minlength']">The first name needs to be at least 4 characters.</span>
+            </span>
+          </div>
+        </div>
+  
+    
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+          <div class="col-md-8">
+            <input
+              type="text" 
+              class="form-control" 
+              id="lastNameId" 
+              formControlName="lastName"
+              [ngClass]="{'is-invalid': (lastName.touched || lastName.dirty) && !lastName.valid}" />
+            <span class="invalid-feedback">
+              <span *ngIf="lastName.errors?.['required']">Please enter your last name.</span>
+              <span *ngIf="lastName.errors?.['minlength']">The last name needs to be at least 4 characters.</span>
+            </span>
+          </div>
+        </div>
+  
+     
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="emailId">Email</label>
+          <div class="col-md-8">
+            <input 
+              type="email" 
+              class="form-control" 
+              id="emailId" 
+              formControlName="email"
+              [ngClass]="{'is-invalid': (email.touched || email.dirty) && !email.valid}" />
+            <span class="invalid-feedback">
+              <span *ngIf="email.errors?.['required']">Please enter your email.</span>
+              <span *ngIf="email.errors?.['email']">Enter a valid email address.</span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="phoneId">Phone Number</label>
+          <div class="col-md-8">
+            <input
+              type="tel" 
+              class="form-control" 
+              id="phoneId" 
+              formControlName="phone"
+              [ngClass]="{'is-invalid': (phone.touched || phone.dirty) && !phone.valid}" />
+            <span class="invalid-feedback">
+              <span *ngIf="phone.errors?.['required']">Please enter your phone number.</span>
+              <span *ngIf="phone.errors?.['pattern']">Enter a valid 10-digit phone number.</span>
+            </span>
+          </div>
+        </div>
+  
+       
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+              Submit
+            </button>
+          </div>
+        </div>
+  
+        <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+      </form>
+    </div>
+  </div>
+  
+
+   

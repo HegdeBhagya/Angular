@@ -1,0 +1,98 @@
+<!-- <div class="container mt-4">
+    <h3>{{ isEditMode ? 'Edit Travel Destination' : 'Add New Destination' }}</h3>
+    <form #travelForm="ngForm" (ngSubmit)="onSubmit(travelForm)">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="travel.name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" class="form-control" [(ngModel)]="travel.location" name="location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" class="form-control" [(ngModel)]="travel.price" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="number" id="rating" class="form-control" [(ngModel)]="travel.rating" name="rating" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" [(ngModel)]="travel.description" name="description"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">{{ isEditMode ? 'Update' : 'Add' }}</button>
+    </form>
+</div> -->
+
+
+
+
+<!-- <div class="card shadow md-3" style="width: 60%;align-self: center;margin: 20px;">
+    <div class="card card-header" style="background-color: maroon;">
+    <span style="color: antiquewhite;">Edit the Movie</span>
+</div>
+    <div class="card-body">
+        <form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Movie Name</span>
+                  </div>
+                        <input class="form-control" type="text" id="movieName" name=movieName [(ngModel)]="travel?.name">
+                </div>
+                
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Movie Rating</span>
+              </div>
+                    <input class="form-control" type="text" id="movieRating" name=movieRating [(ngModel)]="travel.">
+            </div>
+            
+            <br>
+            <button name="save" type="button" class="btn btn-secondary" (click)="onSave()">Save</button>
+
+        </form>
+    </div>
+
+
+
+</div> -->
+
+
+
+
+
+<div class="card shadow md-3" style="width: 60%; align-self: center; margin: 20px;">
+    <div class="card-header" style="background-color: maroon;">
+      <span style="color: antiquewhite;">Edit the Destination</span>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Destination Name</span>
+          </div>
+          <input class="form-control" type="text" id="destinationName" name="destinationName" [(ngModel)]="travel.name">
+        </div>
+        
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Rating</span>
+          </div>
+          <input class="form-control" type="number" id="destinationRating" name="destinationRating" [(ngModel)]="travel.rating">
+        </div>
+        
+        <button name="save" type="button" class="btn btn-secondary" (click)="onSave()">Save</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+
+  
